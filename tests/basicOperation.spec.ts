@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Basic operation of the website", () => {
-  // Hook
+  // Hook do przygotowania przed każdym testem
   test.beforeEach(async ({ page }) => {
     const url = "https://our2worlds.pl/";
     await page.goto(url);
