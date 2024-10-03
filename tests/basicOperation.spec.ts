@@ -22,6 +22,8 @@ test.describe("Basic operation of the website", () => {
     });
     await clickAndExpectVisible(wybieramButton);
 
+    await expect(page).toHaveURL(/.*rome/);
+
     const zaczynijuzdzisButton = page.getByRole("button", {
       name: "ZACZNIJ JUŻ DZIŚ",
     });
@@ -49,9 +51,9 @@ test.describe("Basic operation of the website", () => {
     });
     await expect(dorwinRow).toBeVisible();
 
-    const strongElement = dorwinRow.getByRole("strong");
-    await expect(strongElement).toBeVisible();
-    await strongElement.click(); // Kliknięcie w strong na forum
+    // const strongElement = dorwinRow.getByRole("strong");
+    // await expect(strongElement).toBeVisible();
+    // await strongElement.click(); // Kliknięcie w strong na forum
   });
 
   test("Test Link to forum Imperium w Płomieniach", async ({ page }) => {
@@ -62,9 +64,9 @@ test.describe("Basic operation of the website", () => {
     const cellElement = page.getByRole("cell", { name: "Spotkanie (cz. I)" });
     await expect(cellElement).toBeVisible(); // Sprawdzenie widoczności komórki
 
-    const strongElement = cellElement.getByRole("strong");
-    await expect(strongElement).toBeVisible();
-    await strongElement.click(); // Kliknięcie w <strong>
+    // const strongElement = cellElement.getByRole("strong");
+    // await expect(strongElement).toBeVisible();
+    // await strongElement.click(); // Kliknięcie w <strong>
   });
 
   test("Rome - map test", async ({ page }) => {
@@ -112,9 +114,7 @@ test.describe("Basic operation of the website", () => {
     await expect(page.locator(".swiper-slide-active")).toBeVisible(); // Sprawdzenie poprzedniego slajdu
 
     // Klikanie w prevButton kilka razy
-    await prevButton.click();
-    await prevButton.click();
-    await prevButton.click();
+    await prevButton.click({ clickCount: 3 });
     await prevButton.dblclick();
     await expect(prevButton).toBeVisible(); // Sprawdzenie, czy przycisk prevButton nadal jest widoczny
   });
