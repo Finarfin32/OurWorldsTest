@@ -21,7 +21,7 @@ Ensures that the map within the Imperium w Płomieniach section is displayed cor
 
 Validates the functionality of the image slider within the site. The tests check the visibility and navigation through slides using both the next and previous buttons, including edge cases like multiple and double-clicks.
 
-##Technologies Used:
+## Technologies Used:
 
 - **Playwright:** For browser automation and UI testing.
 - **Node.js:** Test environment for running Playwright scripts.
