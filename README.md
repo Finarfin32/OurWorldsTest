@@ -37,7 +37,7 @@ Validates the functionality of the image slider within the site. The tests check
 - new project with Playwright  
   `npm init playwright@latest`
 - record tests for given site  
-  `npx playwright codegen https://our2worlds.pl/`
+  `npx playwright codegen https://our3worlds.pl/`
 - run tests without browser GUI  
   `npx playwright test`
 - run tests with browser GUI  
